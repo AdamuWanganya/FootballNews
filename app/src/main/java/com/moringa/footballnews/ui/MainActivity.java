@@ -11,17 +11,18 @@ import android.widget.Toast;
 
 import com.moringa.footballnews.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
-    private EditText id;
-    private Button button;
+    @BindView(R.id.id) EditText id;
+    @BindView(R.id.button) Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        id = (EditText) findViewById(R.id.id);
-        button = (Button) findViewById(R.id.button);
+        ButterKnife.bind(this);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backgrounds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/id"
         android:layout_width="wrap_content"
@@ -23,7 +35,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
-        android:text="Button"
+        android:text="Find Trophies"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id" />
@@ -36,6 +50,7 @@
         android:layout_marginBottom="68dp"
         android:text="enter player id to view trophies"
         app:layout_constraintBottom_toTopOf="@+id/id"
+        android:textColor="@color/colorTextIcons"
         app:layout_constraintStart_toStartOf="@+id/id" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

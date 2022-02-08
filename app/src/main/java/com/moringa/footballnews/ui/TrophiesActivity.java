@@ -19,13 +19,15 @@ import com.moringa.footballnews.network.RetrofitClient;
 import java.util.Arrays;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TrophiesActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
+    @BindView(R.id.recyclerView) RecyclerView recyclerView;
 
     private static final String TAG = "TAG";
     RetrofitClient retrofitClient;
@@ -35,7 +37,7 @@ public class TrophiesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trophies);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        ButterKnife.bind(this);
 
         Intent intent = getIntent();
         String id =  intent.getStringExtra("id");
