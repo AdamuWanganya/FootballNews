@@ -14,9 +14,11 @@ import com.moringa.footballnews.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.id) EditText id;
-    @BindView(R.id.button) Button button;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.id)
+    EditText id;
+    @BindView(R.id.button)
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +26,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String strId = id.getText().toString();
 
-                if (strId.isEmpty()){
-                    Toast.makeText(MainActivity.this, "can't search without id", Toast.LENGTH_LONG).show();
-                } else {
-                    Intent intent = new Intent(MainActivity.this, TrophiesActivity.class);
-                    intent.putExtra("id", strId);
-                    startActivity(intent);
-                }
+        button.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == button) {
+            String strId = id.getText().toString();
+            if (strId.isEmpty()) {
+                Toast.makeText(MainActivity.this, "can't search without id", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(MainActivity.this, TrophiesActivity.class);
+                intent.putExtra("id", strId);
+                startActivity(intent);
             }
-        });
+//                String strId = id.getText().toString();
+//
+//                if (strId.isEmpty()){
+//                    Toast.makeText(MainActivity.this, "can't search without id", Toast.LENGTH_LONG).show();
+//                } else {
+//                    Intent intent = new Intent(MainActivity.this, TrophiesActivity.class);
+//                    intent.putExtra("id", strId);
+//                    startActivity(intent);
+//                }
+        }
     }
 
 
