@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "59470723856",
+    "project_id": "footballnews-8adbd",
+    "storage_bucket": "footballnews-8adbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59470723856:android:d9542d0c087e42a12a0395",
+        "android_client_info": {
+          "package_name": "com.moringa.footballnews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59470723856-cjsk89i8gfdf5uhv6qifb90d7cn7p5mc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYuUvaOdzECrhp-QMaPEDrC1uTER6sEFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59470723856-cjsk89i8gfdf5uhv6qifb90d7cn7p5mc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Football News</string>
+        <string-array name="team1">
+            <item>Arsenal</item>
+            <item>Liverpool</item>
+            <item>Chelsea</item>
+            <item>Tottenham</item>
+            <item>Manu</item>
+        </string-array>
+
+        <string-array name="team2">
+            <item>Manu</item>
+            <item>Tottenham</item>
+            <item>Chelsea</item>
+            <item>Liverpool</item>
+            <item>Arsenal</item>
+        </string-array>
 </resources>
