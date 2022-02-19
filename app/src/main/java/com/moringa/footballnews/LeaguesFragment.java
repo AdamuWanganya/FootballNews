@@ -45,7 +45,7 @@ public class LeaguesFragment extends Fragment {
 
         // Inflate the layout for this fragment
         FootballApi footballApi = FootballClient.getClient();
-        Call<FootballLeaguesResponse> call =  footballApi.getLeagues(10);
+        Call<FootballLeaguesResponse> call =  footballApi.getLeagues(20);
 
         call.enqueue(new Callback<FootballLeaguesResponse>() {
             @Override

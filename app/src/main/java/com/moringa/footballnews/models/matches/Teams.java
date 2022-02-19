@@ -7,8 +7,10 @@ import com.google.gson.annotations.SerializedName;
 import com.moringa.footballnews.models.matches.Away;
 import com.moringa.footballnews.models.matches.Home;
 
+import java.io.Serializable;
+
 //@Generated("jsonschema2pojo")
-public class Teams {
+public class Teams implements Serializable {
 
     @SerializedName("home")
     @Expose

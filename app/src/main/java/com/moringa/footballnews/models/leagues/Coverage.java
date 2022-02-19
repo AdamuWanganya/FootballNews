@@ -6,8 +6,10 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.moringa.footballnews.models.leagues.Fixtures;
 
+import java.io.Serializable;
+
 //@Generated("jsonschema2pojo")
-public class Coverage {
+public class Coverage implements Serializable {
 
     @SerializedName("fixtures")
     @Expose

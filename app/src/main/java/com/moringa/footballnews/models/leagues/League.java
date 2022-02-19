@@ -5,8 +5,10 @@ package com.moringa.footballnews.models.leagues;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 //@Generated("jsonschema2pojo")
-public class League {
+public class League implements Serializable {
 
     @SerializedName("id")
     @Expose

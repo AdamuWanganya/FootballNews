@@ -5,8 +5,10 @@ package com.moringa.footballnews.models.matches;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 //@Generated("jsonschema2pojo")
-public class Halftime {
+public class Halftime implements Serializable {
 
     @SerializedName("home")
     @Expose

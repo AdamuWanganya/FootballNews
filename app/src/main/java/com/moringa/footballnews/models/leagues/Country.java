@@ -4,19 +4,22 @@ package com.moringa.footballnews.models.leagues;
 //import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
 //
 //@Generated("jsonschema2pojo")
-public class Country {
+public class Country implements Serializable {
 
     @SerializedName("name")
     @Expose
     private String name;
     @SerializedName("code")
     @Expose
-    private Object code;
+    private String code;
     @SerializedName("flag")
     @Expose
-    private Object flag;
+    private String flag;
 
     /**
      * No args constructor for use in serialization
@@ -31,7 +34,7 @@ public class Country {
      * @param flag
      * @param name
      */
-    public Country(String name, Object code, Object flag) {
+    public Country(String name, String code, String flag) {
         super();
         this.name = name;
         this.code = code;
@@ -46,19 +49,19 @@ public class Country {
         this.name = name;
     }
 
-    public Object getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(Object code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public Object getFlag() {
+    public String getFlag() {
         return flag;
     }
 
-    public void setFlag(Object flag) {
+    public void setFlag(String flag) {
         this.flag = flag;
     }
 

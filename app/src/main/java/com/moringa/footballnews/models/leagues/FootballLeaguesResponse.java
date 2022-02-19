@@ -1,13 +1,14 @@
 
 package com.moringa.footballnews.models.leagues;
 
+import java.io.Serializable;
 import java.util.List;
 //import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 //@Generated("jsonschema2pojo")e
-public class FootballLeaguesResponse {
+public class FootballLeaguesResponse implements Serializable {
 
 //    @SerializedName("get")
 //    @Expose

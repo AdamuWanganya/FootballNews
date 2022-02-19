@@ -9,8 +9,10 @@ import com.moringa.footballnews.models.matches.Fulltime;
 import com.moringa.footballnews.models.matches.Halftime;
 import com.moringa.footballnews.models.matches.Penalty;
 
+import java.io.Serializable;
+
 //@Generated("jsonschema2pojo")
-public class Score {
+public class Score implements Serializable {
 
     @SerializedName("halftime")
     @Expose

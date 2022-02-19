@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FootballNews">
         <activity
+            android:name=".ui.MatchesDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ui.LeaguesDetails"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/NoActionBarTheme">

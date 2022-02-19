@@ -2,6 +2,7 @@ package com.moringa.footballnews.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +15,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringa.footballnews.R;
 import com.moringa.footballnews.models.leagues.Response;
+import com.moringa.footballnews.ui.LeaguesDetails;
+import com.moringa.footballnews.ui.MatchesDetails;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 
 public class LeaguesRecylerViewAdapter extends RecyclerView.Adapter<LeaguesRecylerViewAdapter.ViewHolder> {
-    List<Response>  leaguesList;
+    List<Response> leaguesList;
      Context context;
 
     public LeaguesRecylerViewAdapter(Context context, List<Response> leaguesList){
@@ -42,6 +45,17 @@ public class LeaguesRecylerViewAdapter extends RecyclerView.Adapter<LeaguesRecyl
         holder.textView1.setText(leaguesList.get(position).getLeague().getName());
 //        TODO use picaso to load images
         Picasso.get().load(leaguesList.get(position).getLeague().getLogo()).into(holder.imageView);
+
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, LeaguesDetails.class);
+
+                intent.putExtra("Details",leaguesList.get(position));
+                context.startActivity(intent);
+
+            }
+        });
 
     }
 
