@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ import java.util.List;
 public class LeaguesRecylerViewAdapter extends RecyclerView.Adapter<LeaguesRecylerViewAdapter.ViewHolder> {
     List<Response> leaguesList;
      Context context;
+//     int lastPosition = 1;
 
     public LeaguesRecylerViewAdapter(Context context, List<Response> leaguesList){
         this.context = context;
@@ -42,9 +44,13 @@ public class LeaguesRecylerViewAdapter extends RecyclerView.Adapter<LeaguesRecyl
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.textView1.setText(leaguesList.get(position).getLeague().getName());
+//        if (ViewHolder.getAdapterPosition()>lastPosition) {
+//
+//            Animation animation = animationUtils.loadAnimation()
+            holder.textView1.setText(leaguesList.get(position).getLeague().getName());
 //        TODO use picaso to load images
-        Picasso.get().load(leaguesList.get(position).getLeague().getLogo()).into(holder.imageView);
+            Picasso.get().load(leaguesList.get(position).getLeague().getLogo()).into(holder.imageView);
+//        }
 
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override

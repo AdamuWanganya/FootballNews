@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
            }
 
            private void addToSharedPreferences(ArrayList<String> leagues) {
-        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY,"leagues").apply();
+        mEditor.putString(Constants.PREFERENCES_LEAGUES_KEY,"leagues").apply();
            }
 
 
