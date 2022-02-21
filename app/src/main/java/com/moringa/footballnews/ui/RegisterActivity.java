@@ -2,9 +2,14 @@ package com.moringa.footballnews.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +28,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @BindView(R.id.password) TextView password;
     @BindView(R.id.signup) Button register;
     @BindView(R.id.login) TextView login;
+    @BindView(R.id.both)
+    RelativeLayout both;
 
     private FirebaseAuth mAuth;
 
@@ -44,12 +51,32 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         login.setOnClickListener(this);
     }
 
+    //Handler hd = new Handler();
+//            hd.postDelayed(new Runnable() {
+//        @Override
+//        public void run() {
+//
+//            // Add Your Intent
+//
+//        }
+//
+//    }, 2000); // Time Delay ,2 Seconds
+//}
+
     @Override
     public void onClick(View view) {
 
         if (view == login){
-            Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-            startActivity(intent);
+            fade();
+            Handler hd = new Handler();
+            hd.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                    startActivity(intent);
+                }
+            },1000);
+
         }
 
         if (view == register){
@@ -57,7 +84,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
     }
-
     private void users() {
         String Email = email.getText().toString().trim();
         String Password = password.getText().toString().trim();
@@ -79,6 +105,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     }
 
                 });
+    }
+
+    private void fade() {
+        ImageView image = (ImageView)findViewById(R.id.imageView);
+        Animation animation1 =
+                AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.fade);
+        both.startAnimation(animation1);
     }
 
 }

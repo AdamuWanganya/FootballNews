@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -54,9 +56,24 @@ public class MatchesDetails extends AppCompatActivity {
         like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                root.push().setValue(response);
-                Toast.makeText(MatchesDetails.this,"Saved",Toast.LENGTH_LONG).show();
+                if (view == like) {
+                    slide();
+                    root.push().setValue(response);
+                    Toast.makeText(MatchesDetails.this, "Saved", Toast.LENGTH_LONG).show();
 
+                }
+            }
+
+            private void slide() {
+                Animation animation1 =
+                        AnimationUtils.loadAnimation(getApplicationContext(),
+                                R.anim.fade);
+                homeLogo.startAnimation(animation1);
+                homeName.startAnimation(animation1);
+                away.startAnimation(animation1);
+                leagueName.startAnimation(animation1);
+                leagueRound.startAnimation(animation1);
+                awayLogo.startAnimation(animation1);
             }
         });
     }

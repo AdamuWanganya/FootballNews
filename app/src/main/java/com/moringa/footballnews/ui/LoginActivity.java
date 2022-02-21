@@ -2,8 +2,12 @@ package com.moringa.footballnews.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,17 +45,55 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         login.setOnClickListener(this);
     }
 
+//    new Handler().postDelayed(new Runnable() {
+//        @Override
+//        public void run() {
+//
+//            Intent i=new Intent(CurrentActivity.this,Next.class);
+//            startActivity(i);
+//        }
+//    }, 3000);
+//Handler hd = new Handler();
+//            hd.postDelayed(new Runnable() {
+//        @Override
+//        public void run() {
+//
+//            // Add Your Intent
+//
+//        }
+//
+//    }, 2000); // Time Delay ,2 Seconds
+//}
+
     @Override
     public void onClick(View view) {
         if (view == register) {
-            Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
-            startActivity(intent);
+            clockwise();
+
+            Handler hd = new Handler();
+            hd.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+           startActivity(intent);
+                }
+            },10000);
+//            clockwise();
+//            Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+//            startActivity(intent);
         }
 
         if (view == login) {
             users();
         }
 
+    }
+
+    private void clockwise() {
+        ImageView image = (ImageView)findViewById(R.id.imageView);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.clockwise);
+        image.startAnimation(animation);
     }
 
     private void users() {
